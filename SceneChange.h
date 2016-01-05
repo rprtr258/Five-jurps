@@ -1,0 +1,15 @@
+#ifndef SCENECHANGE_H_INCLUDED
+#define SCENECHANGE_H_INCLUDED
+
+enum SceneChange {
+    NO_CHANGE,
+    QUIT_GAME,
+    MENU_SCENE,
+    GAME_SCENE,
+    INFO_SCENE,
+    EDITOR_SCENE,
+    SETTINGS_SCENE,
+    WIN_SCENE
+};
+
+#endif
