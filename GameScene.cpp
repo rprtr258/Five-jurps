@@ -21,37 +21,37 @@ GameScene::~GameScene() {
     delete loader;
 }
 
-void GameScene::load() {
+void GameScene::load(const ImageManager &imageManager) {
     loader = new SaveLoader("save.txt");
 
     Scene::load("img\\backgrounds\\game.png");
 
     menuButtonTexture = new sf::Texture();
-    menuButtonTexture->loadFromFile("img\\button_menu.png");
+    menuButtonTexture->loadFromFile("img\\buttons\\button_menu.png");
 
     menuButtonSprite = new sf::Sprite();
     menuButtonSprite->setTexture(*menuButtonTexture);
     menuButtonSprite->setPosition(36, 30);
 
     actionsButtonTexture = new sf::Texture();
-    actionsButtonTexture->loadFromFile("img\\button_actions.png");
+    actionsButtonTexture->loadFromFile("img\\buttons\\button_actions.png");
 
     actionsButtonsSprite = new sf::Sprite();
     actionsButtonsSprite->setTexture(*actionsButtonTexture);
     actionsButtonsSprite->setPosition(426, 523);
 
     tipButtonTexture = new sf::Texture();
-    tipButtonTexture->loadFromFile("img\\button_tip.png");
+    tipButtonTexture->loadFromFile("img\\buttons\\button_tip.png");
 
     tipButtonSprite = new sf::Sprite();
     tipButtonSprite->setTexture(*tipButtonTexture);
     tipButtonSprite->setPosition(100, 30);
 
     field = new GameField();
-    field->load(*loader);
+    field->load(*loader, imageManager);
 
     font = new sf::Font();
-    font->loadFromFile("parsek.ttf");
+    font->loadFromFile("fonts\\parsek.ttf");
 
     turnCounterText = new sf::Text("0", *font, 40);
     turnCounterText->setPosition(560, 515);
@@ -83,9 +83,11 @@ SceneChange GameScene::clickAt(int x, int y) {
         showTip = !showTip;
         field->setViewGoal(showTip);
     }
-    int fieldx = (x - 252-(5.0-field->getSize())*24.0)/48, fieldy = (y - 178-(5.0-field->getSize())*24.0)/48;
-    if(x-252-(5.0-field->getSize())*24.0>=0 && y-178-(5.0-field->getSize())*24.0>=0 && fieldx>=0 && fieldx<field->getSize() && fieldy>=0 && fieldy<field->getSize()) {
-        history->doAction(field->click(fieldx, fieldy, x, y));
+    int fieldx = cellAtMouse(x, y).x, fieldy = cellAtMouse(x, y).y;
+    if(fieldx>=0 && fieldx<field->getSize() && fieldy>=0 && fieldy<field->getSize()) {
+        if((field->getField().getCellType(fieldx, fieldy, false)==ARROW && checkArrowBounds(x, y))) {
+            history->doAction(field->click(fieldx, fieldy));
+    }
     } else {
         field->unHighlight();
     }
@@ -111,18 +113,39 @@ void GameScene::mouseAt(int x, int y) {
     if(action.contains(x, y) && (x<action.left+116 || x>action.left+212)) {
         actionsButtonsSprite->setColor(sf::Color::Red);
     }
-    int fieldx = (x - 252-(5.0-field->getSize())*24.0)/48, fieldy = (y - 178-(5.0-field->getSize())*24.0)/48;
-    if(x-252>=0 && y-178>=0 && fieldx>=0 && fieldx<field->getSize() && fieldy>=0 && fieldy<field->getSize()) {
-        field->highlightCell(fieldx, fieldy, x, y);
+    int fieldx = cellAtMouse(x, y).x, fieldy = cellAtMouse(x, y).y;
+    if(fieldx>=0 && fieldx<field->getSize() && fieldy>=0 && fieldy<field->getSize()) {
+        if((field->getField().getCellType(fieldx, fieldy, false)==ARROW && checkArrowBounds(x, y)) ||
+           (field->getField().getCellType(fieldx, fieldy, false)!=ARROW)) {
+            field->highlightCell(fieldx, fieldy, x, y);
+        }
+    }
+}
+
+sf::Vector2i GameScene::cellAtMouse(int x, int y) {
+    int sx = 252+(5-field->getSize())*24, sy = 190+(5-field->getSize())*24;
+    return sf::Vector2i((x-sx<0?-1:(x-sx)/48), (y-sy<0?-1:(y-sy)/48));
+}
+
+bool GameScene::checkArrowBounds(int x, int y) {
+    int sx = 252+(5-field->getSize())*24, sy = 190+(5-field->getSize())*24;
+    int fieldx = (x-sx<0?-1:(x-sx)/48), fieldy = (y-sy<0?-1:(y-sy)/48);
+    int fx = sx + fieldx*48, fy = sy + fieldy*48;
+    if(x>=fx+11 && x<=fx+48-13 &&
+       y>=fy+11 && y<=fy+48-13) {
+        return true;
+    } else {
+        return false;
     }
 }
 
 void GameScene::draw(sf::RenderWindow &window) {
     Scene::draw(window);
-    window.draw(*menuButtonSprite);
     window.draw(*actionsButtonsSprite);
     field->draw(window);
     window.draw(*progressText);
     window.draw(*turnCounterText);
+
     window.draw(*tipButtonSprite);
+    window.draw(*menuButtonSprite);
 }

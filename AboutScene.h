@@ -1,14 +1,14 @@
-#ifndef SETTINGSSCENE_H
-#define SETTINGSSCENE_H
+#ifndef ABOUTSCENE_H
+#define ABOUTSCENE_H
 
 #include <SFML/Graphics.hpp>
 
 #include "Scene.h"
 
-class SettingsScene:public Scene {
+class AboutScene:public Scene {
     public:
-        SettingsScene();
-        virtual ~SettingsScene();
+        AboutScene();
+        virtual ~AboutScene();
 
         virtual SceneChange clickAt(int x, int y);
         virtual void mouseAt(int x, int y);

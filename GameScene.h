@@ -14,12 +14,15 @@ class GameScene:public Scene {
     public:
         GameScene();
         virtual ~GameScene();
-        virtual void load();
+        virtual void load(const ImageManager &imageManager);
         virtual void updateScene();
         virtual void draw(sf::RenderWindow &window);
 
         virtual SceneChange clickAt(int x, int y);
         virtual void mouseAt(int x, int y);
+    private:
+        sf::Vector2i cellAtMouse(int x, int y);
+        bool checkArrowBounds(int x, int y);
     private:
         sf::Sprite *menuButtonSprite, *actionsButtonsSprite, *tipButtonSprite;
         sf::Texture *menuButtonTexture, *actionsButtonTexture, *tipButtonTexture;

@@ -11,12 +11,13 @@
 #include "Action.h"
 #include "Field.h"
 #include "SaveLoader.h"
+#include "ImageManager.h"
 
 class GameField {
     public:
         GameField();
         ~GameField();
-        Action click(int x, int y, int concrx, int concry);
+        Action click(int x, int y);
         void turn(int fromx, int fromy, int tox, int toy);
         void highlightCell(int x, int y, int mouseX, int mouseY);
         void unHighlightAll();
@@ -25,14 +26,15 @@ class GameField {
         void hideTip();
         void resetTextures(bool clearArrows, bool showGoal);
         int getSize() const;
+        Field getField() const;
         std::string getProgress() const;
-        void load(SaveLoader &loader);
+        void load(SaveLoader &loader, const ImageManager &imageManager);
         void draw(sf::RenderWindow &window);
     private:
         bool highlighted = false, showDescription = false, showGoal = false;
         TokenDescription *description;
         std::vector<std::vector<sf::Sprite*> > fieldCells, squareTextures;
-        sf::Texture *emptyCellTexture, *arrowsTextures[4], *tokenTextures[2];
+        sf::Texture *emptyCellTexture, *arrowsTextures[4], *tokenTextures[4];
         Field *field;
         //10-19 - Black Tokens
         //20-29 - White tokens

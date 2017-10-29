@@ -9,7 +9,7 @@ class MenuScene:public Scene {
     public:
         MenuScene();
         virtual ~MenuScene();
-        virtual void load();
+        virtual void load(const ImageManager &imageManager);
         virtual void updateScene();
         virtual void draw(sf::RenderWindow &window);
 

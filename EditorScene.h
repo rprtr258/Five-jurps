@@ -13,7 +13,7 @@ class EditorScene:public Scene {
         virtual SceneChange clickAt(int x, int y);
         virtual void mouseAt(int x, int y);
 
-        virtual void load();
+        virtual void load(const ImageManager &imageManager);
         virtual void updateScene();
         virtual void draw(sf::RenderWindow &window);
     private:

@@ -8,7 +8,7 @@ SettingsScene::~SettingsScene() {
 
 }
 
-void SettingsScene::load() {
+void SettingsScene::load(const ImageManager &imageManager) {
     Scene::load("img\\backgrounds\\settings.png");
 }
 

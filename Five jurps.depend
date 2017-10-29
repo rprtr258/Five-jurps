@@ -504,3 +504,157 @@
 1451836352 source:g:\workspacec\five jurps\winscene.cpp
 	"WinScene.h"
 
+1450568956 source:g:\workspacec\five-jurps\action.cpp
+	"Action.h"
+
+1450569476 g:\workspacec\five-jurps\action.h
+
+1451371753 source:g:\workspacec\five-jurps\actionshistory.cpp
+	"ActionsHistory.h"
+
+1450823745 g:\workspacec\five-jurps\actionshistory.h
+	<vector>
+	"Action.h"
+	"GameField.h"
+
+1452223539 g:\workspacec\five-jurps\gamefield.h
+	<sstream>
+	<string>
+	<vector>
+	<SFML/Graphics.hpp>
+	"TokenDescription.h"
+	"Action.h"
+	"Field.h"
+	"SaveLoader.h"
+	"ImageManager.h"
+
+1450533540 g:\workspacec\five-jurps\tokendescription.h
+	<string>
+	<SFML/Graphics.hpp>
+
+1452031082 g:\workspacec\five-jurps\field.h
+	<vector>
+	<SFML/Graphics.hpp>
+
+1450714550 g:\workspacec\five-jurps\saveloader.h
+	<fstream>
+	<vector>
+	<string>
+	"Field.h"
+
+1449493535 source:g:\workspacec\five-jurps\controller.cpp
+	"Controller.h"
+
+1449373783 g:\workspacec\five-jurps\controller.h
+	<SFML/Graphics.hpp>
+	"Model.h"
+
+1452223670 g:\workspacec\five-jurps\model.h
+	"Scene.h"
+	"MenuScene.h"
+	"GameScene.h"
+	"EditorScene.h"
+	"InfoScene.h"
+	"AboutScene.h"
+	"SettingsScene.h"
+	"WinScene.h"
+	"ImageManager.h"
+	"View.h"
+
+1452222906 g:\workspacec\five-jurps\scene.h
+	<string>
+	<SFML/Graphics.hpp>
+	"SceneChange.h"
+	"ImageManager.h"
+
+1452043875 g:\workspacec\five-jurps\scenechange.h
+
+1452223022 g:\workspacec\five-jurps\menuscene.h
+	<SFML/Graphics.hpp>
+	"Scene.h"
+
+1452223037 g:\workspacec\five-jurps\gamescene.h
+	<sstream>
+	<SFML/Graphics.hpp>
+	"Scene.h"
+	"GameField.h"
+	"ActionsHistory.h"
+	"SaveLoader.h"
+
+1452223044 g:\workspacec\five-jurps\editorscene.h
+	<SFML/Graphics.hpp>
+	"Scene.h"
+
+1452223029 g:\workspacec\five-jurps\infoscene.h
+	<SFML/Graphics.hpp>
+	"Scene.h"
+
+1452223010 g:\workspacec\five-jurps\settingsscene.h
+	<SFML/Graphics.hpp>
+	"Scene.h"
+
+1452223004 g:\workspacec\five-jurps\winscene.h
+	<SFML/Graphics.hpp>
+	"Scene.h"
+
+1451834084 g:\workspacec\five-jurps\view.h
+	<SFML/Graphics.hpp>
+	"Scene.h"
+
+1452222988 source:g:\workspacec\five-jurps\editorscene.cpp
+	"EditorScene.h"
+
+1452031083 source:g:\workspacec\five-jurps\field.cpp
+	"Field.h"
+
+1452222989 source:g:\workspacec\five-jurps\infoscene.cpp
+	"InfoScene.h"
+
+1451834225 source:g:\workspacec\five-jurps\main.cpp
+	"View.h"
+	"Model.h"
+	"Controller.h"
+
+1452222989 source:g:\workspacec\five-jurps\menuscene.cpp
+	"MenuScene.h"
+
+1452552093 source:g:\workspacec\five-jurps\model.cpp
+	"Model.h"
+
+1451373856 source:g:\workspacec\five-jurps\saveloader.cpp
+	"SaveLoader.h"
+
+1449372883 source:g:\workspacec\five-jurps\scene.cpp
+	"Scene.h"
+
+1452222989 source:g:\workspacec\five-jurps\settingsscene.cpp
+	"SettingsScene.h"
+
+1452045042 source:g:\workspacec\five-jurps\tokendescription.cpp
+	"TokenDescription.h"
+
+1451834743 source:g:\workspacec\five-jurps\view.cpp
+	"View.h"
+
+1452222989 source:g:\workspacec\five-jurps\winscene.cpp
+	"WinScene.h"
+
+1452552028 source:g:\workspacec\five-jurps\gamefield.cpp
+	"GameField.h"
+
+1452223216 source:g:\workspacec\five-jurps\gamescene.cpp
+	"GameScene.h"
+
+1452222925 source:g:\workspacec\five-jurps\aboutscene.cpp
+	"AboutScene.h"
+
+1452223053 g:\workspacec\five-jurps\aboutscene.h
+	<SFML/Graphics.hpp>
+	"Scene.h"
+
+1452223586 g:\workspacec\five-jurps\imagemanager.h
+	<SFML/Graphics.hpp>
+
+1452223604 source:g:\workspacec\five-jurps\imagemanager.cpp
+	"ImageManager.h"
+

@@ -11,17 +11,17 @@ MenuScene::~MenuScene() {
     }
 }
 
-void MenuScene::load() {
+void MenuScene::load(const ImageManager &imageManager) {
     Scene::load("img\\backgrounds\\menu.png");
     for(int i=0;i<5;i++) {
         buttonsTextures[i] = new sf::Texture();
         buttonsSprites[i] = new sf::Sprite();
     }
-    buttonsTextures[0]->loadFromFile("img\\button_play.png");
-    buttonsTextures[1]->loadFromFile("img\\button_info.png");
-    buttonsTextures[2]->loadFromFile("img\\button_editor.png");
-    buttonsTextures[3]->loadFromFile("img\\button_settings.png");
-    buttonsTextures[4]->loadFromFile("img\\button_quit.png");
+    buttonsTextures[0]->loadFromFile("img\\buttons\\button_play.png");
+    buttonsTextures[1]->loadFromFile("img\\buttons\\button_info.png");
+    buttonsTextures[2]->loadFromFile("img\\buttons\\button_editor.png");
+    buttonsTextures[3]->loadFromFile("img\\buttons\\button_settings.png");
+    buttonsTextures[4]->loadFromFile("img\\buttons\\button_quit.png");
     for(int i=0;i<5;i++) {
         buttonsSprites[i]->setTexture(*buttonsTextures[i]);
         buttonsSprites[i]->setPosition(BUTTON_X_SHIFT, BUTTON_Y_SHIFT+BUTTON_SPACE*i);

@@ -7,6 +7,7 @@ enum SceneChange {
     MENU_SCENE,
     GAME_SCENE,
     INFO_SCENE,
+    ABOUT_SCENE,
     EDITOR_SCENE,
     SETTINGS_SCENE,
     WIN_SCENE

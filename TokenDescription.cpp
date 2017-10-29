@@ -2,7 +2,7 @@
 
 TokenDescription::TokenDescription(const std::string &text) {
     font = new sf::Font();
-    font->loadFromFile("times.ttf");
+    font->loadFromFile("fonts\\times.ttf");
     descriptionText = new sf::Text(text, *font, 25);
     descriptionText->setColor(sf::Color(235, 78, 239));
     descriptionText->setPosition(0, 0);

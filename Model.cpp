@@ -2,11 +2,13 @@
 
 Model::Model() {
     currentScene = new MenuScene();
-    currentScene->load();
+    imageManager = new ImageManager();
+    currentScene->load(*imageManager);
 }
 
 Model::~Model() {
     delete currentScene;
+    delete imageManager;
 }
 
 void Model::update() {
@@ -31,10 +33,13 @@ void Model::click(int x, int y) {
         case INFO_SCENE:
             currentScene = new InfoScene();
             break;
+        case ABOUT_SCENE:
+            currentScene = new AboutScene();
+            break;
         case EDITOR_SCENE:
             currentScene = new EditorScene();
             break;
-        case WIN_SCENE:
+        case WIN_SCENE: Gam
             currentScene = new WinScene();
             break;
         case SETTINGS_SCENE:
@@ -47,7 +52,7 @@ void Model::click(int x, int y) {
             break;
     }
     if(change!=NO_CHANGE && change!=QUIT_GAME) {
-        currentScene->load();
+        currentScene->load(*imageManager);
         view->setScene(currentScene);
     }
 }

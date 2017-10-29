@@ -8,7 +8,7 @@ WinScene::~WinScene() {
 
 }
 
-void WinScene::load() {
+void WinScene::load(const ImageManager &imageManager) {
     Scene::load("img\\backgrounds\\win.png");
 }
 

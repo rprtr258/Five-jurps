@@ -8,7 +8,7 @@ EditorScene::~EditorScene() {
 
 }
 
-void EditorScene::load() {
+void EditorScene::load(const ImageManager &imageManager) {
     Scene::load("img\\backgrounds\\editor.png");
 }
 

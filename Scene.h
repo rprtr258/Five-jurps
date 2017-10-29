@@ -6,6 +6,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "SceneChange.h"
+#include "ImageManager.h"
 
 class Scene {
     public:
@@ -14,7 +15,7 @@ class Scene {
 
         void load(const char* backgroundPath);
 
-        virtual void load() = 0;
+        virtual void load(const ImageManager &imageManager) = 0;
         virtual void updateScene() = 0;
         virtual void draw(sf::RenderWindow &window);
 

@@ -5,7 +5,7 @@
 
 #include <SFML/Graphics.hpp>
 
-enum CellType{None = -1, Empty, Black, White, Arrow};
+enum CellType{NONE = -1, EMPTY, BLACK, WHITE, ARROW};
 typedef unsigned int size_t;
 
 class Field {

@@ -6,8 +6,10 @@
 #include "GameScene.h"
 #include "EditorScene.h"
 #include "InfoScene.h"
+#include "AboutScene.h"
 #include "SettingsScene.h"
 #include "WinScene.h"
+#include "ImageManager.h"
 #include "View.h"
 
 class Model {
@@ -21,6 +23,7 @@ class Model {
     private:
         Scene* currentScene;
         View* view;
+        ImageManager *imageManager;
 };
 
 #endif
