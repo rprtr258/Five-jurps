@@ -12,6 +12,6 @@ The game will be archived in `app/build/dist/`. Unarchived version is in `app/bu
 
 ## Screenshots
 
-![Menu](https://github.com/rprtr258/Five-jurps/blob/master/screenshots/menu.png?raw=true)
-![Game](https://github.com/rprtr258/Five-jurps/blob/master/screenshots/game.png?raw=true)
-![About](https://github.com/rprtr258/Five-jurps/blob/master/app/resources/img/backgrounds/about.png?raw=true)
+![Menu](/screenshots/menu.png)
+![Game](/screenshots/game.png)
+![About](/app/resources/img/backgrounds/about.png)
